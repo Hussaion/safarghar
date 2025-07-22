@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safar Ghar - Authentic Northern Areas Stays</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-whatsapp {
+            background: #25D366;
+        }
+        
+        .btn-whatsapp:hover {
+            background: #128C7E;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Header Styles */
+        header {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .header-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+        
+        /* About Section */
+        #about {
+            background: #f9f9f9;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Rooms Section */
+        #rooms {
+            background: white;
+        }
+        
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .room-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .room-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .room-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .room-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .room-card:hover .room-image img {
+            transform: scale(1.1);
+        }
+        
+        .room-details {
+            padding: 20px;
+        }
+        
+        .room-details h3 {
+            color: #2c3e50;
+        }
+        
+        .room-price {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        
+        /* Why Choose Us Section */
+        #why-choose {
+            background: #f9f9f9;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        
+        /* Contact Section */
+        #contact {
+            background: #2c3e50;
+            color: white;
+        }
+        
+        #contact h2 {
+            color: white;
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a252f;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .rooms-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header with Video Banner -->
+    <header>
+        <video class="video-background" autoplay muted loop>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-panoramic-view-of-snowy-mountain-peak-1580-large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="header-content">
+            <h1>Experience the Real Northern Pakistan</h1>
+            <p>Stay with local communities and immerse yourself in the breathtaking beauty and rich culture of the Himalayas, Karakoram, and Hindu Kush ranges.</p>
+            <a href="#rooms" class="btn">View Rooms</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="text-center">About Safar Ghar</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Safar Ghar is your gateway to authentic experiences in Pakistan's stunning Northern Areas. We connect travelers with local hosts in Hunza, Skardu, Gilgit, and other breathtaking locations.</p>
+                    <p>Unlike commercial hotels, our homestays allow you to live with local families, eat home-cooked meals, and experience the region's traditions firsthand. Your stay directly benefits the community and helps preserve their way of life.</p>
+                    <p>From the majestic peaks of K2 to the serene valleys of Swat, we offer comfortable accommodations that put you at the heart of Pakistan's most spectacular landscapes.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Northern Pakistan Landscape">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms">
+        <div class="container">
+            <h2 class="text-center">Our Featured Stays</h2>
+            <p class="text-center">Choose from our carefully selected accommodations across Northern Pakistan</p>
+            
+            <div class="rooms-grid">
+                <!-- Room 1 -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Hunza Traditional House">
+                    </div>
+                    <div class="room-details">
+                        <h3>Traditional Hunza Home</h3>
+                        <p>Experience authentic Hunza culture in this beautiful stone and wood house with panoramic mountain views.</p>
+                        <div class="room-price">PKR 5,000/night</div>
+                        <a href="https://wa.me/923231426960?text=Hi%20Safar%20Ghar,%20I%20want%20to%20book%20the%20Traditional%20Hunza%20Home" class="btn btn-whatsapp">Book on WhatsApp</a>
+                    </div>
+                </div>
+                
+                <!-- Room 2 -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Skardu Mountain View Room">
+                    </div>
+                    <div class="room-details">
+                        <h3>Skardu Mountain View Room</h3>
+                        <p>Wake up to stunning views of the Karakoram range in this comfortable family-run guesthouse.</p>
+                        <div class="room-price">PKR 4,500/night</div>
+                        <a href="https://wa.me/923231426960?text=Hi%20Safar%20Ghar,%20I%20want%20to%20book%20the%20Skardu%20Mountain%20View%20Room" class="btn btn-whatsapp">Book on WhatsApp</a>
+                    </div>
+                </div>
+                
+                <!-- Room 3 -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gilgit Riverside Cottage">
+                    </div>
+                    <div class="room-details">
+                        <h3>Gilgit Riverside Cottage</h3>
+                        <p>Peaceful cottage by the river with organic garden and traditional Balti architecture.</p>
+                        <div class="room-price">PKR 6,000/night</div>
+                        <a href="https://wa.me/923231426960?text=Hi%20Safar%20Ghar,%20I%20want%20to%20book%20the%20Gilgit%20Riverside%20Cottage" class="btn btn-whatsapp">Book on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose">
+        <div class="container">
+            <h2 class="text-center">Why Choose Safar Ghar</h2>
+            <p class="text-center">We're different from typical tourist accommodations</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-home"></i>
+                    <h3>Authentic Stays</h3>
+                    <p>Live in real homes, not hotels. Experience daily life with local families in traditional houses.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Community Benefit</h3>
+                    <p>100% of your payment goes directly to the host family, supporting local economies.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Home-Cooked Meals</h3>
+                    <p>Enjoy authentic regional cuisine made with local ingredients and family recipes.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-mountain"></i>
+                    <h3>Unique Locations</h3>
+                    <p>Access remote, beautiful areas that commercial hotels can't reach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="text-center">Contact Us</h2>
+            <p class="text-center">Ready to book your authentic Northern Pakistan experience?</p>
+            
+            <div class="contact-info text-center">
+                <p><i class="fas fa-phone"></i> <a href="tel:+923231426960">0323 1426960</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/923231426960">Chat on WhatsApp</a></p>
+                <p><i class="fas fa-envelope"></i> info@safarghar.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Safar Ghar - Authentic Northern Pakistan Stays</p>
+            <p>Connecting travelers with local communities in the mountains of Pakistan</p>
+        </div>
+    </footer>
+</body>
+</html>
